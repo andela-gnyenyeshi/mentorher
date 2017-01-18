@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "babel-node ./server/srcServer.js",
+    "lint": "esw webpack.config.* src --color",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -27,6 +28,10 @@
     "babel-loader": "^6.2.10",
     "babel-preset-latest": "^6.16.0",
     "babel-register": "^6.18.0",
+    "eslint": "^3.13.1",
+    "eslint-config-airbnb-base": "^11.0.1",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-watch": "^2.1.14",
     "path": "^0.12.7",
     "webpack": "^1.14.0",
     "webpack-dev-middleware": "^1.9.0",
