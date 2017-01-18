@@ -1,2 +1,2 @@
 const gerty = 8;
-console.log(`The data`);
+console.log(`The data = ${gerty}`); /*eslint-disable no-console*/

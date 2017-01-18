@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "babel-node ./server/srcServer.js",
+    "start": "npm-run-all --parallel open:src lint",
+    "open:src": "babel-node ./server/srcServer.js",
     "lint": "esw webpack.config.* src --color",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -32,6 +33,8 @@
     "eslint-config-airbnb-base": "^11.0.1",
     "eslint-plugin-import": "^2.2.0",
     "eslint-watch": "^2.1.14",
+    "localtunnel": "^1.8.2",
+    "npm-run-all": "^4.0.1",
     "path": "^0.12.7",
     "webpack": "^1.14.0",
     "webpack-dev-middleware": "^1.9.0",
