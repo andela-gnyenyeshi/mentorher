@@ -1,2 +1,9 @@
-const gerty = 8;
-console.log(`The data = ${gerty}`); /*eslint-disable no-console*/
+import React from 'react';
+import { Router, browserHistory } from 'react-router';
+import { render } from 'react-dom';
+import routes from './routes';
+
+render (
+	<Router history={browserHistory} routes={routes} />,
+	document.getElementById("app")
+);
