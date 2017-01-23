@@ -21,6 +21,6 @@
         "no-console": 1,
         "no-debugger": 1,
         "comma-dangle": 0,
-				"no-unused-vars": 0
+				"no-unused-vars": 1
     }
 }
