@@ -8,7 +8,7 @@
     "open:src": "babel-node ./server/srcServer.js",
     "lint": "esw webpack.config.* src server/srcServer.js --color",
     "lint:watch": "npm run lint -- --watch",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --reporter progress utils/testSetup.js ./src/**/*.test.js"
   },
   "repository": {
     "type": "git",
@@ -22,8 +22,10 @@
   "homepage": "https://github.com/andela-gnyenyeshi/mentorher#readme",
   "dependencies": {
     "express": "^4.14.0",
+    "jsdom": "^9.9.1",
     "materialize-css": "^0.97.8",
     "react": "^15.4.2",
+    "react-addons-test-utils": "^15.4.2",
     "react-redux": "^5.0.2",
     "react-router": "^3.0.2",
     "redux": "^3.6.0"

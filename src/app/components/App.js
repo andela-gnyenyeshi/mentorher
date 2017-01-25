@@ -1,5 +1,5 @@
 import React, {PropTypes} from 'react';
-const geryu = 6;
+
 class App extends React.Component {
 	render() {
 		return (
