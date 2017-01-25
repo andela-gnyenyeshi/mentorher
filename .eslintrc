@@ -12,6 +12,9 @@
 					"jsx": true
 				}
     },
+		"plugins" : [
+			"react"
+		],
     "env": {
         "browser": true,
         "node": true,
@@ -21,6 +24,8 @@
         "no-console": 1,
         "no-debugger": 1,
         "comma-dangle": 0,
-				"no-unused-vars": 1
+				"no-unused-vars": 1,
+				"react/jsx-uses-react": 2,
+    		"react/jsx-uses-vars": 2
     }
 }
