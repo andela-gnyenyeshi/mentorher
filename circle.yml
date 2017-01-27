@@ -1,3 +1,9 @@
 machine:
  node:
   version: 7.0
+deployment:
+ production:
+  branch: master
+  heroku:
+   appname: mentorher
+
