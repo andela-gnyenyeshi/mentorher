@@ -27,6 +27,8 @@
     "jsdom": "^9.9.1",
     "materialize-css": "^0.97.8",
     "npm-run-all": "^4.0.1",
+    "pg": "^6.1.2",
+    "pg-hstore": "^2.3.2",
     "react": "^15.4.2",
     "react-addons-test-utils": "^15.4.2",
     "react-redux": "^5.0.2",
