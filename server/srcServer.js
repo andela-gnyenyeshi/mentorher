@@ -2,6 +2,7 @@ import express from 'express';
 import path from 'path';
 import webpack from 'webpack';
 import config from '../webpack.config.dev';
+import routes from '../src/api/routes';
 
 const app = express();
 const port = process.env.PORT || 4000;
@@ -14,7 +15,11 @@ app.use(require('webpack-dev-middleware')(compiler, {
 
 app.use(require('webpack-hot-middleware')(compiler))
 
-app.use('/', (req, res) => {
+app.get('/api', (req, res) => {
+	res.send('Ola ola')
+})
+
+app.use('*', (req, res) => {
     res.sendFile(path.join(__dirname, '../src/index.html'));
 });
 
