@@ -25,9 +25,18 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false
     },
-    workDescription: {
+    workdescription: {
       type: DataTypes.STRING,
       allowNull: false
+    }
+  }, {
+    classMethods: {
+      associate: (models) => {
+        Mentor.hasMany(models.Categories, {
+          through: models.Mentor_Category,
+          onDelete: 'CASACADE'
+        });
+      }
     }
   });
    return Mentor;
