@@ -7,24 +7,6 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      mentorid: {
-        type: Sequelize.INTEGER,
-        onDelete: 'CASCADE',
-        references: {
-          model: 'Mentors',
-          key: 'id',
-          as: 'mentorid'
-        }
-      },
-      categoryid: {
-        type: Sequelize.INTEGER,
-        onDelete: 'CASCADE',
-        references: {
-          model: 'Categories',
-          key: 'id',
-          as: 'categoryid'
-        }
-      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

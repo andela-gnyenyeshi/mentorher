@@ -22,6 +22,7 @@
   "homepage": "https://github.com/andela-gnyenyeshi/mentorher#readme",
   "dependencies": {
     "babel-cli": "^6.18.0",
+    "body-parser": "^1.16.1",
     "eslint": "^3.13.1",
     "express": "^4.14.0",
     "jsdom": "^9.9.1",

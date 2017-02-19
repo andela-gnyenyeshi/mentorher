@@ -25,13 +25,15 @@ module.exports = {
       description: {
         type: Sequelize.STRING
       },
+      workdescription: {
+        type: Sequelize.STRING
+      },
+      hobbies: {
+        type: Sequelize.STRING
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
-      },
-      workdescription: {
-        allowNull: false,
-        type: Sequelize.INTEGER
       },
       updatedAt: {
         allowNull: false,

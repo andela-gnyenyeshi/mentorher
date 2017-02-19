@@ -1,8 +1,8 @@
 import React from 'react'; /* eslint-disable no-unused-vars */
 import { Route, IndexRoute } from 'react-router'; /* eslint-disable no-unused-vars */
-import App from './app/components/App';
-import LandingPage from './app/components/Home/LandingPage';
-import User from './app/components/User/User';
+import App from '../app/components/App';
+import LandingPage from '../app/components/Home/LandingPage';
+import User from '../app/components/User/User';
 
 export default (
 	<Route path="/" component={App}>

@@ -5,7 +5,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     classMethods: {
       associate: (models) => {
-        Categories.hasMany(models.Mentor, {
+        Categories.belongsToMany(models.Mentor, {
           through: models.Mentor_Category,
           onDelete: 'CASCADE'
         })
