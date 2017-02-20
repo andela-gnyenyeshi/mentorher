@@ -3,31 +3,35 @@ import mongoose from 'mongoose';
 let Schema = mongoose.Schema;
 let MentorSchema = new Schema({
   firstname: {
-    type: STRING,
+    type: String,
     required: true
   },
   lastname: {
-    type: STRING,
+    type: String,
     required: true
   },
   email: {
-    type: STRING,
+    type: String,
     required: true
   },
   region: {
-    type: STRING,
+    type: String,
     required: true
   },
   description: {
-    type: STRING,
+    type: String,
     required: true
   },
   workDescription: {
-    type: STRING,
+    type: String,
     required: true
   },
   hobbies: {
-    type: STRING,
+    type: String,
+    required: true
+  },
+  category: {
+    type: Array,
     required: true
   }
 });

@@ -3,7 +3,8 @@ import mongoose from 'mongoose';
 let Schema = mongoose.Schema;
 let CategorySchema = new Schema({
 	name: {
-		type: STRING,
+		type: String,
+		enum: ['Tech', 'Business', 'HR and Marketing'],
 		required: true
 	}
 });
