@@ -1,7 +1,6 @@
-'use strict';
-module.exports = function(sequelize, DataTypes) {
-  var Mentor = sequelize.define('Mentor', {
-     firstname: {
+module.exports = (sequelize, DataTypes) => {
+  const Mentor = sequelize.define('Mentor', {
+    firstname: {
        type: DataTypes.STRING,
        allowNull: false
     },
@@ -34,10 +33,29 @@ module.exports = function(sequelize, DataTypes) {
     }
   }, {
     classMethods: {
-      associate: function(models) {
-        Mentor.belongsToMany(models.Category, { as: 'Categories', through: 'MentorCategories', foreignKey: 'mentor_id' });
+      associate: (models) => {
+        Mentor.hasMany(models.Categories, {
+          onDelete: 'CASACADE'
+        });
       }
     }
   });
-  return Mentor;
+   return Mentor;
+};
+
+
+module.exports = (sequelize, DataTypes) => {
+  const Categories = sequelize.define('Categories', {
+    name: DataTypes.STRING,
+    allowNull: false
+  }, {
+    classMethods: {
+      associate: (models) => {
+        Categories.hasMany(models.Mentor, {
+          onDelete: 'CASCADE'
+        })
+      }
+    }
+  });
+  return Categories;
 };

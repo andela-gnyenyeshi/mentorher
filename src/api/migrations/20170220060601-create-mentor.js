@@ -1,3 +1,4 @@
+'use strict';
 module.exports = {
   up: function(queryInterface, Sequelize) {
     return queryInterface.createTable('Mentors', {
@@ -7,28 +8,7 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      firstname: {
-        type: Sequelize.STRING
-      },
-      lastname: {
-        type: Sequelize.STRING
-      },
-      available: {
-        type: Sequelize.BOOLEAN
-      },
-      email: {
-        type: Sequelize.STRING
-      },
-      region: {
-        type: Sequelize.STRING
-      },
-      description: {
-        type: Sequelize.STRING
-      },
-      workdescription: {
-        type: Sequelize.STRING
-      },
-      hobbies: {
+      title: {
         type: Sequelize.STRING
       },
       createdAt: {

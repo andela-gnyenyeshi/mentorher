@@ -1,11 +1,15 @@
+'use strict';
 module.exports = {
-  up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('Mentor_Categories', {
+  up: function(queryInterface, Sequelize) {
+    return queryInterface.createTable('Categories', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
+      },
+      title: {
+        type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,
@@ -17,7 +21,7 @@ module.exports = {
       }
     });
   },
-  down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('Mentor_Categories');
+  down: function(queryInterface, Sequelize) {
+    return queryInterface.dropTable('Categories');
   }
 };
