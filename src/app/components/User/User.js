@@ -3,8 +3,8 @@ import React from 'react';
 class User extends React.Component {
 	render() {
 		return (
-			<p>This is the user route</p>
-		)
+			<p>This is the user route </p>
+		);
 	}
 }
 

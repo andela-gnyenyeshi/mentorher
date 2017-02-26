@@ -19,4 +19,4 @@ export default {
 				{test: /\.(ttf|eof|woff|woff2|eot)$/, loaders: ['url-loader']}
         ]
     }
-}
+};

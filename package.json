@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npm-run-all --parallel open:src lint:watch",
-    "open:src": "babel-node ./server/srcServer.js",
+    "start": "NODE_ENV=development npm-run-all --parallel open:src lint:watch",
+    "open:src": "nodemon ./server/srcServer.js --exec babel-node --presets es2015",
     "lint": "esw webpack.config.* src server/srcServer.js --color",
     "lint:watch": "npm run lint -- --watch",
     "test": "mocha --reporter progress utils/testSetup.js ./src/**/*.test.js"
@@ -46,6 +46,7 @@
     "materialize-css": "^0.97.8",
     "mocha": "^3.2.0",
     "mongoose": "^4.8.3",
+    "nodemon": "^1.11.0",
     "npm-run-all": "^4.0.1",
     "path": "^0.12.7",
     "react": "^15.4.2",

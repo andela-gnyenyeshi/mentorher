@@ -30,10 +30,10 @@ let MentorSchema = new Schema({
     type: String,
     required: true
   },
-  category: {
-    type: Array,
-    required: true
-  }
+  categories: [{
+    type: Schema.Types.ObjectId,
+    ref: 'Category'
+  }]
 });
 
 export default mongoose.model('Mentor', MentorSchema);

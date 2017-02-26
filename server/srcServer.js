@@ -7,6 +7,7 @@ import mongoconfig from '../src/api/config/dbconfig';
 import config from '../webpack.config.dev';
 import mentorContoller from '../src/api/controller/mentor';
 import categoryController from '../src/api/controller/category';
+let appEnv = process.env.NODE_ENV;
 
 const app = express();
 const port = process.env.PORT || 4000;
@@ -15,14 +16,18 @@ const compiler = webpack(config);
 app.use(bodyparser.json());
 app.use(require('webpack-dev-middleware')(compiler, {
 	noInfo: true,
+	hot: true,
 	publicPath: config.output.publicPath
 }));
 
 app.use(require('webpack-hot-middleware')(compiler));
 
-mongoose.connect(mongoconfig.db, (err) => {
-  err ? console.log('Error connecting to the database') : console.log('Connected to database');
-});
+if (appEnv === 'development') {
+	mongoose.connect(mongoconfig.db, (err) => {
+		err ? console.log('Error connecting to the database') : console.log('Connected to database');
+	});
+}
+
 
 app.post('/api', mentorContoller.create);
 app.post('/category', categoryController.create);
