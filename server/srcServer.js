@@ -30,6 +30,10 @@ if (appEnv === 'development') {
 
 
 app.post('/api', mentorContoller.create);
+app.put('/api/update/:id', categoryController.update);
+app.put('/api/mentor/update/:id', mentorContoller.updateProfile);
+app.delete('/api/:id', categoryController.delete);
+app.delete('/api/mentor/delete/:id', mentorContoller.deleteUser);
 app.post('/category', categoryController.create);
 
 app.use('*', (req, res) => {
