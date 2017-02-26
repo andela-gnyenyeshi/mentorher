@@ -1,12 +1,10 @@
 import express from 'express';
-import path from 'path';
 import webpack from 'webpack';
 import mongoose from 'mongoose';
 import bodyparser from 'body-parser';
 import mongoconfig from '../src/api/config/dbconfig';
 import config from '../webpack.config.dev';
-import mentorContoller from '../src/api/controller/mentor';
-import categoryController from '../src/api/controller/category';
+import routes from '../src/api/routes/index';
 let appEnv = process.env.NODE_ENV;
 
 const app = express();
@@ -28,18 +26,10 @@ if (appEnv === 'development') {
 	});
 }
 
-
-app.post('/api', mentorContoller.create);
-app.put('/api/update/:id', categoryController.update);
-app.put('/api/mentor/update/:id', mentorContoller.updateProfile);
-app.delete('/api/:id', categoryController.delete);
-app.delete('/api/mentor/delete/:id', mentorContoller.deleteUser);
-app.post('/category', categoryController.create);
-
-app.use('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../src/index.html'));
-});
+routes(app);
 
 app.listen(port, (err) => {
     console.log('Listening on port: ' + port);
 });
+
+export default app;
