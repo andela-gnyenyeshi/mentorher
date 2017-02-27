@@ -4,7 +4,7 @@ import webpack from 'webpack';
 export default {
 	debug: true,
 	devtool: 'inline-source-map',
-	entry: [path.resolve(__dirname, 'src/index'), './node_modules/materialize-css/bin/materialize.js', './node_modules/materialize-css/bin/materialize.css', 'webpack-hot-middleware/client?reload=true'],
+	entry: [path.resolve(__dirname, 'src/index'), './src/app/assets/styles/style.css', './node_modules/materialize-css/bin/materialize.js', './node_modules/materialize-css/bin/materialize.css', 'webpack-hot-middleware/client?reload=true'],
 	target: 'web',
 		output: {
 			path: path.resolve(__dirname, 'src'),
@@ -16,7 +16,7 @@ export default {
 			loaders: [
 				{test: /\.js$/, exclude: /node_modules/, loaders: ['babel']},
 				{test: /\.css$/, loaders: ['style', 'css']},
-				{test: /\.(ttf|eof|woff|woff2|eot)$/, loaders: ['url-loader']}
+				{test: /\.(ttf|eof|woff|woff2|eot|jpg|jpeg)$/, loaders: ['url-loader']}
         ]
     }
 };
