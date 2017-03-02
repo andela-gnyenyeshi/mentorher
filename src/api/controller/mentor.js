@@ -77,6 +77,17 @@ const mentorController = {
 				});
 			});
 		});
+	},
+
+	findAll: (req, res) => {
+		Mentor.find((err, mentors) => {
+			return err ? res.status(500).json({
+				message: err.message
+			}) : res.status(200).json({
+				message: 'Mentors fetched successfully',
+				data: mentors
+			});
+		});
 	}
 };
 

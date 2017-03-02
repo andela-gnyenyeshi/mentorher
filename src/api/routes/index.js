@@ -6,6 +6,6 @@ export default function(app) {
 	category(app);
 	mentor(app);
 	app.use('*', (req, res) => {
-		res.sendFile(path.join(__dirname, '../src/index.html'));
+		res.sendFile(path.join(__dirname, '../../index.html'));
 	});
 }

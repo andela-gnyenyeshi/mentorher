@@ -1,6 +1,12 @@
 import React, {PropTypes} from 'react';
+import { connect } from 'react-redux';
+import fetchMentors from '../../app/modules/home/actions';
 
-class App extends React.Component {
+export class App extends React.Component {
+  componentWillMount() {
+    this.props.fetchMentors();
+  }
+
 	render() {
 		return (
 			<div>
@@ -23,5 +29,10 @@ class App extends React.Component {
 App.propTypes = {
 	children: PropTypes.object.isRequired
 };
+const mapStateToProps = (state) => ({
+	mentors: state.mentors
+});
 
-export default App;
+export default connect(mapStateToProps, {
+	fetchMentors
+})(App);

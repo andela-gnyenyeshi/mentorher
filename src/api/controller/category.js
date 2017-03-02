@@ -8,48 +8,36 @@ const categoryController = {
 		});
 
 		category.save((err, savedCategory) => {
-			if (err) {
-				return res.status(500).json({
-					message: 'Error creating category',
-					data: err
-				});
-			} else {
-				return res.status(200).json({
-					message: 'Created successfully',
-					data: savedCategory
-				});
-			}
+			return err ? res.status(500).json({
+				message: err.message
+			}) : res.status(200).json({
+				message: 'Successfully deleted',
+				data: savedCategory
+			});
 		});
 	},
 	delete: (req, res) => {
 		Category.remove({
 			_id: req.params.id
 		}, (err, deletedCategory) => {
-			if (err) {
-				return res.status(500).json({
-					error: err
-				});
-			} else {
-				return res.status(200).json({
-					message: 'Category successfully deleted'
-				});
-			}
-		})
+			return err ? res.status(500).json({
+				message: err.message
+			}) : res.status(200).json({
+				message: 'Successfully deleted',
+				data: deletedCategory
+			});
+		});
 	},
 	update: (req, res) => {
 		Category.findById(req.params.id, (err, categoryData) => {
 			let newCategory = Object.assign(categoryData, req.body);
 			newCategory.save((err, savedCategory) => {
-				if (err) {
-					return res.status(500).json({
-						message: err
-					});
-				} else {
-					return res.status(200).json({
-						message: 'Successfully updated',
-						data: savedCategory
-					});
-				}
+				return err ? res.status(500).json({
+					message: err.message
+				}) : res.status(200).json({
+					message: 'Successfully updated',
+					data: savedCategory
+				});
 			});
 		});
 	}

@@ -9,7 +9,8 @@
         "ecmaVersion": 7,
         "sourceType": "module",
 				"ecmaFeatures": {
-					"jsx": true
+					"jsx": true,
+					"experimentalObjectRestSpread": true
 				}
     },
 		"plugins" : [
@@ -28,5 +29,8 @@
 				"no-unused-vars": 1,
 				"react/jsx-uses-react": 2,
     		"react/jsx-uses-vars": 2
-    }
+    },
+		"settings": {
+    	"parser": "babel-eslint"
+		}
 }
